@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+}
+
+body {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  background-color: hsl(210, 46%, 95%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5% 10%;
+}
+
+.photo {
+  width: 40px;
+  border-radius: 100%;
+  object-fit: contain;
+}
+
+.top {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* #region container */
+
+.container {
+  width: 900px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.item {
+  box-sizing: border-box;
+  padding: 25px;
+  border-radius: 10px;
+  color: hsl(210, 46%, 95%);
+}
+
+.purple {
+  background-image: url('images/bg-pattern-quotation.svg');
+  background-repeat: no-repeat;
+  background-position: top right 100px;
+  background-color: hsl(263, 55%, 52%);
+  grid-column: span 2;
+}
+
+.dark-gray {
+  background-color: hsl(219, 29%, 14%);
+  grid-column: span 2;
+}
+
+.gray {
+  background-color: hsl(217, 19%, 35%);
+}
+
+.janete {
+  background-color: #fff;
+  grid-column: span 1;
+  color: hsl(217, 19%, 35%);
+}
+
+.kira {
+  background-color: #fff;
+  grid-row: span 2;
+  color: hsl(217, 19%, 35%);
+}
+
+/* #endregion */
+
+/* #region headings */
+
+h2 {
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  /* letter-spacing: 0.3px; */
+}
+
+p {
+  font-size: 0.8125rem;
+  opacity: 0.7;
+}
+
+.top-desc {
+  opacity: 0.5;
+}
+
+/* #endregion */
+
+/* #region media */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: unset;
+  }
+
+  .purple {
+    grid-column: initial;
+    background-position: top right 0px;
+  }
+
+  .dark-gray {
+    grid-column: initial;
+    order: 3;
+  }
+
+  .gray {
+    order: 1;
+  }
+
+  .janete {
+    grid-column: initial;
+    order: 2;
+  }
+
+  .kira {
+    grid-row: initial;
+    order: 4;
+  }
+}
+
+/* #endregion */
